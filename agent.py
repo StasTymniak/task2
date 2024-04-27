@@ -22,13 +22,13 @@ tools = [
         description="Provides information about users names using Vector Search",
         func = kg_qa,
         return_direct=True
-    )
-    # Tool.from_function(
-    #     name="Graph Cypher QA Chain",  # (1)
-    #     description="Provides information about Movies including their Actors, Directors and User reviews", # (2)
-    #     func = cypher_qa, # (3)
-    #     return_direct=True
-    # ),
+    ),
+    Tool.from_function(
+        name="Graph Cypher QA Chain",  # (1)
+        description="Provides information about Tweets including their Authors, Text", # (2)
+        func = cypher_qa, # (3)
+        return_direct=True
+    ),
 ]
 
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
