@@ -7,22 +7,21 @@ neo4jvector = Neo4jVector.from_existing_index(
     url=st.secrets["NEO4J_URI"],             # (2)
     username=st.secrets["NEO4J_USERNAME"],   # (3)
     password=st.secrets["NEO4J_PASSWORD"],   # (4)
-    index_name="moviePlots",                 # (5)
-    node_label="Movie",                      # (6)
-    text_node_property="plot",               # (7)
-    embedding_node_property="plotEmbedding", # (8)
-    retrieval_query="""
-RETURN
-    node.plot AS text,
-    score,
-    {
-        title: node.title,
-        directors: [ (person)-[:DIRECTED]->(node) | person.name ],
-        actors: [ (person)-[r:ACTED_IN]->(node) | [person.name, r.role] ],
-        tmdbId: node.tmdbId,
-        source: 'https://www.themoviedb.org/movie/'+ node.tmdbId
-    } AS metadata
-"""
+    index_name="twitter_embeddings_index",                 # (5)
+    node_label="Tweet",                      # (6)
+#     text_node_property="name",               # (7)
+#     embedding_node_property="nameEmbedding", # (8)
+#     retrieval_query="""
+# RETURN
+#     node.name AS text,
+#     score,
+#     {
+#         followers: node.followers,
+#         following: node.following,
+#         location: node.location,
+#         screen_name: node.screen_name
+#     } AS metadata
+# """
 )
 
 retriever = neo4jvector.as_retriever()

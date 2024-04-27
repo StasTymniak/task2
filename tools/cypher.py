@@ -14,8 +14,6 @@ Do not use any other relationship types or properties that are not provided.
 
 Fine Tuning:
 
-For movie titles that begin with "The", move "the" to the end. For example "The 39 Steps" becomes "39 Steps, The" or "the matrix" becomes "Matrix, The".
-
 
 Schema:
 {schema}

@@ -31,9 +31,9 @@ memory = ConversationBufferWindowMemory(
 from langchain.prompts import PromptTemplate
 
 agent_prompt = PromptTemplate.from_template("""
-You are a movie expert providing information about movies.
+You are a twitter expert providing information about tweets.
 Be as helpful as possible and return as much information as possible.
-Do not answer any questions that do not relate to movies, actors or directors.
+Do not answer any questions that do not relate to tweets, users, followers, folowings.
 
 Do not answer any questions using your pre-trained knowledge, only use the information provided in the context.
 
