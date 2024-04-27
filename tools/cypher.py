@@ -6,7 +6,7 @@ from llmchatbotpythonmain.graph import graph
 from langchain.prompts.prompt import PromptTemplate
 
 CYPHER_GENERATION_TEMPLATE = """
-You are an expert Neo4j Developer translating user questions into Cypher to answer questions about movies and provide recommendations.
+You are an expert Neo4j Developer translating user questions into Cypher to answer questions about tweets and provide users.
 Convert the user's question based on the schema.
 
 Use only the provided relationship types and properties in the schema.
